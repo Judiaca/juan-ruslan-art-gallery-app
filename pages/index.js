@@ -1,7 +1,7 @@
 import Spotlight from "@/components/Spotlight/Spotlight";
 import { useEffect, useState } from "react";
 
-const SpotlightPage = ({ artPieces }) => {
+const SpotlightPage = ({ artPieces, artPiecesInfo, onToggleFavorite }) => {
   const [randomPiece, setRandomPiece] = useState(null);
 
   useEffect(() => {
@@ -15,11 +15,18 @@ const SpotlightPage = ({ artPieces }) => {
 
   if (!randomPiece) return null;
 
-  const { imageSource, artist } = randomPiece;
+  const { slug, imageSource, artist } = randomPiece;
 
   return (
     <div>
-      <Spotlight image={imageSource} artist={artist} />
+      <Spotlight
+        image={imageSource}
+        artist={artist}
+        isFavorite={
+          artPiecesInfo.find((piece) => piece.slug === slug)?.isFavorite
+        }
+        onToggleFavorite={() => onToggleFavorite(slug)}
+      />
     </div>
   );
 };
