@@ -1,14 +1,13 @@
 import Image from "next/image";
+// import Link from "next/link";
 
 const ArtPiecePreview = ({ image, title, artist }) => {
   return (
-    <article>
-      {image && <Image src={image} width={400} height={400} alt={title} />}
-      <h2>{title}</h2>
-      <p>
-        Artist: <span>{artist}</span>
-      </p>
-    </article>
+    <div className="art-piece-preview">
+      <Image src={image} alt={title} width={300} height={300} />
+      <h3>{title}</h3>
+      <p>By: {artist}</p>
+    </div>
   );
 };
 
