@@ -17,8 +17,25 @@ export default function App({ Component, pageProps }) {
 
   const [artPiecesInfo, setArtPiecesInfo] = useImmerLocalStorageState(
     "artPiecesInfo",
-    { defaultValue: [] }
+    {
+      defaultValue: [],
+    }
   );
+
+  const handleToggleFavorite = (slug) => {
+    const currentPiece = artPiecesInfo.find((piece) => piece.slug === slug);
+    if (!currentPiece) {
+      setArtPiecesInfo([...artPiecesInfo, { slug: slug, isFavorite: true }]);
+      return;
+    }
+    setArtPiecesInfo(
+      artPiecesInfo.map((piece) =>
+        piece.slug === slug
+          ? { slug: slug, isFavorite: !piece.isFavorite }
+          : piece
+      )
+    );
+  };
 
   if (error) {
     return <div>Error during data loading</div>;
@@ -35,6 +52,7 @@ export default function App({ Component, pageProps }) {
         {...pageProps}
         artPieces={data}
         artPiecesInfo={artPiecesInfo}
+        onToggleFavorite={handleToggleFavorite}
       />
     </Layout>
   );
