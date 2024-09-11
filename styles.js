@@ -16,4 +16,13 @@ export default createGlobalStyle`
     display: block;
     object-fit: cover;
   }
+
+  a{
+    text-decoration: none;
+    color:inherit;
+  }
+
+  ul,ol,menu{
+    list-style: none;
+  }
 `;
