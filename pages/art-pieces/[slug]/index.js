@@ -1,6 +1,7 @@
 import ArtPieceDetails from "@/components/ArtPieceDetails/ArtPieceDetails";
 
 import { useEffect, useState } from "react";
+import BackButton from "@/components/BackButton/BackButton";
 
 const ArtPieceDetailsPage = ({
   artPieces,
@@ -24,6 +25,7 @@ const ArtPieceDetailsPage = ({
 
   return (
     <>
+      <BackButton />
       <ArtPieceDetails
         slug={slug}
         image={imageSource}
