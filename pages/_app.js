@@ -37,6 +37,20 @@ export default function App({ Component, pageProps }) {
     );
   };
 
+  // Handle adding comments
+  const handleSubmitComment = (slug, comment) => {
+    setArtPiecesInfo((prevState) =>
+      prevState.map((piece) =>
+        piece.slug === slug
+          ? {
+              ...piece,
+              comments: [...(piece.comments || []), comment], // append new comment
+            }
+          : piece
+      )
+    );
+  };
+
   if (error) {
     return <div>Error during data loading</div>;
   }
@@ -53,6 +67,7 @@ export default function App({ Component, pageProps }) {
         artPieces={data}
         artPiecesInfo={artPiecesInfo}
         onToggleFavorite={handleToggleFavorite}
+        onSubmitComment={handleSubmitComment}
       />
     </Layout>
   );

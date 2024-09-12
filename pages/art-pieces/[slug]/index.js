@@ -6,6 +6,7 @@ const ArtPieceDetailsPage = ({
   artPieces,
   artPiecesInfo,
   onToggleFavorite,
+  onSubmitComment,
 }) => {
   const router = useRouter();
   const { slug } = router.query;
@@ -33,6 +34,7 @@ const ArtPieceDetailsPage = ({
         colors={colors}
         artPiecesInfo={artPiecesInfo}
         onToggleFavorite={() => onToggleFavorite(slug)}
+        onSubmitComment={onSubmitComment}
       />
     </>
   );
