@@ -1,5 +1,7 @@
 import Image from "next/image";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
+import Comments from "../Comments/Comments";
+import CommentForm from "../CommentForm/CommentForm";
 
 const ArtPieceDetails = ({
   slug,
@@ -11,13 +13,14 @@ const ArtPieceDetails = ({
   colors,
   artPiecesInfo,
   onToggleFavorite,
+  onSubmitComment,
 }) => {
+  const artPiece = artPiecesInfo.find((info) => info.slug === slug);
+
   return (
     <article>
       <FavoriteButton
-        isFavorite={
-          artPiecesInfo.find((piece) => piece.slug === slug)?.isFavorite
-        }
+        isFavorite={artPiece?.isFavorite}
         onToggleFavorite={onToggleFavorite}
       />
       <h1>{title}</h1>
@@ -36,6 +39,8 @@ const ArtPieceDetails = ({
           return <li key={color}>{color}</li>;
         })}
       </ul>
+      <Comments comments={artPiece?.comments} />
+      <CommentForm slug={slug} onSubmitComment={onSubmitComment} />
     </article>
   );
 };

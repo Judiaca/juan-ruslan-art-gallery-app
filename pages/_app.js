@@ -5,10 +5,6 @@ import Layout from "@/components/Layout/Layout";
 import GlobalStyle from "../styles";
 import Preloader from "@/components/Preloader/Preloader";
 
-//FavoriteButton -  component ({isFavorite, onToggleFavorite}) - need test
-//CommentForm component ({onSubmitComment}) - need test
-//Comments component ({comments}) - need test
-
 export default function App({ Component, pageProps }) {
   const { data, error, isLoading } = useSWR(
     "https://example-apis.vercel.app/api/art",
@@ -31,9 +27,32 @@ export default function App({ Component, pageProps }) {
     setArtPiecesInfo(
       artPiecesInfo.map((piece) =>
         piece.slug === slug
-          ? { slug: slug, isFavorite: !piece.isFavorite }
+          ? { ...piece, isFavorite: !piece.isFavorite }
           : piece
       )
+    );
+  };
+
+  const handleSubmitComment = (slug, comment) => {
+    const currentInfo = artPiecesInfo.find((info) => info.slug === slug);
+
+    if (!currentInfo) {
+      setArtPiecesInfo([
+        ...artPiecesInfo,
+        { slug: slug, isFavorite: false, comments: [comment] },
+      ]);
+      return;
+    }
+
+    const updatedInfo = {
+      ...currentInfo,
+      comments: Array.isArray(currentInfo.comments)
+        ? [...currentInfo.comments, comment]
+        : [comment],
+    };
+
+    setArtPiecesInfo(
+      artPiecesInfo.map((info) => (info.slug === slug ? updatedInfo : info))
     );
   };
 
@@ -53,6 +72,7 @@ export default function App({ Component, pageProps }) {
         artPieces={data}
         artPiecesInfo={artPiecesInfo}
         onToggleFavorite={handleToggleFavorite}
+        onSubmitComment={handleSubmitComment}
       />
     </Layout>
   );
