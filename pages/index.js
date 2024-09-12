@@ -1,3 +1,4 @@
+import Section from "@/components/Section/Section";
 import Spotlight from "@/components/Spotlight/Spotlight";
 import { useEffect, useState } from "react";
 
@@ -18,7 +19,7 @@ const SpotlightPage = ({ artPieces, artPiecesInfo, onToggleFavorite }) => {
   const { slug, imageSource, artist } = randomPiece;
 
   return (
-    <div>
+    <Section>
       <Spotlight
         image={imageSource}
         artist={artist}
@@ -27,7 +28,7 @@ const SpotlightPage = ({ artPieces, artPiecesInfo, onToggleFavorite }) => {
         }
         onToggleFavorite={() => onToggleFavorite(slug)}
       />
-    </div>
+    </Section>
   );
 };
 
