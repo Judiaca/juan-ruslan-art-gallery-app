@@ -2,6 +2,7 @@ import ArtPieceDetails from "@/components/ArtPieceDetails/ArtPieceDetails";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import BackButton from "@/components/BackButton/BackButton";
+import Section from "@/components/Section/Section";
 
 const ArtPieceDetailsPage = ({
   artPieces,
@@ -24,7 +25,7 @@ const ArtPieceDetailsPage = ({
   const { imageSource, name, artist, year, genre, colors } = piece;
 
   return (
-    <>
+    <Section>
       <BackButton />
       <ArtPieceDetails
         slug={slug}
@@ -38,7 +39,7 @@ const ArtPieceDetailsPage = ({
         onToggleFavorite={() => onToggleFavorite(slug)}
         onSubmitComment={onSubmitComment}
       />
-    </>
+    </Section>
   );
 };
 

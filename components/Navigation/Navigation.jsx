@@ -1,19 +1,26 @@
+import { useRouter } from "next/router";
 import Link from "next/link";
 
+import styles from "./Styles";
+const { Menu, MenuItem } = styles;
+
 const Navigation = () => {
+  const { pathname } = useRouter();
+  const isActive = (path) =>
+    pathname === path || pathname.startsWith(path + "/");
   return (
     <nav>
-      <menu>
-        <li>
+      <Menu>
+        <MenuItem $active={pathname === "/" && pathname === "/"}>
           <Link href="/">Spotlight</Link>
-        </li>
-        <li>
+        </MenuItem>
+        <MenuItem $active={isActive("/art-pieces")}>
           <Link href="/art-pieces">Pieces</Link>
-        </li>
-        <li>
+        </MenuItem>
+        <MenuItem $active={isActive("/favorites")}>
           <Link href="/favorites">Favorites</Link>
-        </li>
-      </menu>
+        </MenuItem>
+      </Menu>
     </nav>
   );
 };
