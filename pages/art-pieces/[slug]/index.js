@@ -1,5 +1,5 @@
 import ArtPieceDetails from "@/components/ArtPieceDetails/ArtPieceDetails";
-import { useRouter } from "next/router";
+
 import { useEffect, useState } from "react";
 
 const ArtPieceDetailsPage = ({
