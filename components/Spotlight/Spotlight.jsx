@@ -1,5 +1,6 @@
 import Image from "next/image";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
+import styles from "./spotlightStyles";
 
 const Spotlight = ({ image, artist, isFavorite, onToggleFavorite }) => {
   return (

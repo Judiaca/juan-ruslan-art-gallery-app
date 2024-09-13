@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-import styles from "./Styles";
+import styles from "./navigationStyles";
 const { Menu, MenuItem } = styles;
 
 const Navigation = () => {

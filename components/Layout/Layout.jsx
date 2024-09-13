@@ -1,6 +1,6 @@
 import Navigation from "../Navigation/Navigation";
 import Section from "../Section/Section";
-import styles from "./Styles";
+import styles from "./layoutStyles";
 const { Header, Footer, Main } = styles;
 
 const Layout = ({ children }) => {
@@ -8,8 +8,8 @@ const Layout = ({ children }) => {
     <>
       <Header>
         <Section>
-          <div>Logo</div>
           <Navigation />
+          <div>Logo</div>
         </Section>
       </Header>
       <Main>{children}</Main>
