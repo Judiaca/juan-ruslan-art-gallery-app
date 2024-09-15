@@ -1,21 +1,24 @@
-// import styled from "styled-components";
+import styled from "styled-components";
 
 const spotlightStyles = {
   container: {
     display: "flex",
+    flexDirection: "column", // Arrange items vertically
     justifyContent: "center",
     alignItems: "center",
     height: "100vh", // Adjust the height as necessary
     padding: "20px",
+    // fontFamily: "Arial, sans-serif", // Choose your desired font
+    // fontSize: "1.2rem", // Adjust the font size as needed
   },
   image: {
     maxWidth: "80%", // Limit the image size to avoid overflow
     height: "auto",
-    border: "10px solid #8B4513", // Brown border for a classic painting frame
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.5)", // Subtle shadow for depth
-    borderRadius: "5px", // Rounded edges for a more frame-like appearance
-    padding: "10px", // Space between the image and the frame
-    backgroundColor: "#fff", // White background inside the frame
+    border: "1.5rem solid #2A324B",
+    boxShadow: "0 0.5rem 1rem rgba(0, 0, 0, 0.3)", // Deeper, more realistic shadow
+    borderRadius: "0.5rem", // Slightly rounded corners
+    padding: "1rem",
+    backgroundColor: "#F5F5DC",
   },
 };
 

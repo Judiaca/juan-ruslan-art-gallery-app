@@ -1,21 +1,20 @@
 import Navigation from "../Navigation/Navigation";
 import Section from "../Section/Section";
 import styles from "./layoutStyles";
-const { Header, Footer, Main } = styles;
+const { Header, Main, Footer } = styles;
 
 const Layout = ({ children }) => {
   return (
     <>
       <Header>
         <Section>
-          <Navigation />
-          <div>Logo</div>
+          <h1>Art Gallery</h1>
         </Section>
       </Header>
       <Main>{children}</Main>
       <Footer>
         <Section>
-          <p>&copy; Copyright 2024</p>
+          <Navigation />
         </Section>
       </Footer>
     </>

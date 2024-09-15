@@ -1,10 +1,13 @@
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
+import ArtPiecesGrid from "./artPiecesStyles";
 
 const ArtPieces = ({ pieces, artPiecesInfo, onToggleFavorite }) => {
   return (
     <div>
       <h2>Art Pieces Collection</h2>
-      <ul className="art-pieces-grid">
+      <ArtPiecesGrid>
+        {" "}
+        {/* Apply the styled component */}
         {pieces.map(({ slug, imageSource, title, artist }) => (
           <li key={slug}>
             <ArtPiecePreview
@@ -17,7 +20,7 @@ const ArtPieces = ({ pieces, artPiecesInfo, onToggleFavorite }) => {
             />
           </li>
         ))}
-      </ul>
+      </ArtPiecesGrid>
     </div>
   );
 };

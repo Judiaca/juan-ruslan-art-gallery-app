@@ -1,4 +1,5 @@
 import FavoriteIcon from "../../assets/heart.svg";
+import FavoriteButtonContainer from "./favoriteButtonStyles";
 
 const FavoriteButton = ({ isFavorite, onToggleFavorite }) => {
   return (
@@ -10,3 +11,16 @@ const FavoriteButton = ({ isFavorite, onToggleFavorite }) => {
 };
 
 export default FavoriteButton;
+
+// import HeartIcon from "../../assets/heart.svg";
+// import HeartTransparentIcon from "../../assets/heart-transparent.svg";
+
+// const FavoriteButton = ({ isFavorite, onToggleFavorite }) => {
+//   return (
+//     <button type="button" onClick={onToggleFavorite}>
+//       {isFavorite ? <HeartIcon /> : <HeartTransparentIcon />}
+//     </button>
+//   );
+// };
+
+// export default FavoriteButton;
