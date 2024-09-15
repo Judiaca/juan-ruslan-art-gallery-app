@@ -12,7 +12,6 @@ const ArtPiecePreview = ({
   artPiecesInfo,
   onToggleFavorite,
 }) => {
-  console.log(title);
   const handleImageError = (event) => {
     event.target.src = "/path/to/placeholder-image.jpg"; // Replace with your placeholder image path
   };

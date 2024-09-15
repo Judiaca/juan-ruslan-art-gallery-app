@@ -8,12 +8,12 @@ const ArtPieces = ({ pieces, artPiecesInfo, onToggleFavorite }) => {
       <ArtPiecesGrid>
         {" "}
         {/* Apply the styled component */}
-        {pieces.map(({ slug, imageSource, title, artist }) => (
+        {pieces.map(({ slug, imageSource, name, artist }) => (
           <li key={slug}>
             <ArtPiecePreview
               slug={slug}
               image={imageSource}
-              title={title}
+              title={name}
               artist={artist}
               artPiecesInfo={artPiecesInfo}
               onToggleFavorite={onToggleFavorite}

@@ -1,9 +1,9 @@
 import Image from "next/image";
-// import FavoriteButton from "../FavoriteButton/FavoriteButton";
+import FavoriteButton from "../FavoriteButton/FavoriteButton";
 import Comments from "../Comments/Comments";
 import CommentForm from "../CommentForm/CommentForm";
 import styles from "./artPieceDetailsStyles";
-import BackButton from "../BackButton/BackButton";
+// import BackButton from "../BackButton/BackButton";
 
 const {
   Container,
@@ -33,10 +33,10 @@ const ArtPieceDetails = ({
     <Container>
       <div>
         <ImageContainer>
-          {/* <FavoriteButton
+          <FavoriteButton
             isFavorite={artPiece?.isFavorite}
-            onToggleFavorite={onToggleFavorite} 
-          /> */}
+            onToggleFavorite={onToggleFavorite}
+          />
           <h1>{title}</h1>
           <Image src={image} width={400} height={400} alt={artist} />
         </ImageContainer>
