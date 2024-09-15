@@ -7,11 +7,12 @@ import ArtPiecePreviewContainer, {
 const ArtPiecePreview = ({
   slug,
   image,
-  title,
   artist,
+  title,
   artPiecesInfo,
   onToggleFavorite,
 }) => {
+  console.log(title);
   const handleImageError = (event) => {
     event.target.src = "/path/to/placeholder-image.jpg"; // Replace with your placeholder image path
   };
@@ -20,9 +21,7 @@ const ArtPiecePreview = ({
     artPiecesInfo.find((piece) => piece.slug === slug)?.isFavorite || false;
 
   return (
-    <article>
-      {" "}
-      {/* No need for a separate styled component for the container if you're not adding specific styles to it */}
+    <ArtPiecePreviewContainer>
       <StyledFavoriteButton
         isFavorite={isFavorite}
         onToggleFavorite={() => onToggleFavorite(slug)}
@@ -44,39 +43,8 @@ const ArtPiecePreview = ({
           </figcaption>
         </figure>
       </Link>
-    </article>
+    </ArtPiecePreviewContainer>
   );
 };
 
 export default ArtPiecePreview;
-
-//     <ArtPiecePreviewContainer>
-//       {" "}
-//       {/* Use the styled component */}
-//       <StyledFavoriteButton
-//         isFavorite={
-//           artPiecesInfo.find((piece) => piece.slug === slug)?.isFavorite
-//         }
-//         onToggleFavorite={() => onToggleFavorite(slug)}
-//       />
-//       <Link href={`/art-pieces/${slug}`}>
-//         <figure>
-//           <Image
-//             src={image}
-//             alt={artist}
-//             width={300}
-//             height={300}
-//             priority
-//             onError={handleImageError}
-//           />
-//           <figcaption className="caption">
-//             <h3>{title}</h3>
-//             <p>By: {artist}</p>
-//           </figcaption>
-//         </figure>
-//       </Link>
-//     </ArtPiecePreviewContainer>
-//   );
-// };
-
-// export default ArtPiecePreview;

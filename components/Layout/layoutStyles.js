@@ -14,6 +14,8 @@ const Header = styled.header`
     align-content: center;
     height: 100%;
     border-bottom: 1px solid #ccc;
+  h1 {  
+    font-size: 50px;  
   }
 `;
 
@@ -34,7 +36,8 @@ const Footer = styled.footer`
     align-items: center;
     height: 100%;
     border-radius: 18px; // Add rounded corners to the footer section
-  }
+  nav {
+    font-size: 22px;
 `;
 
 export default { Header, Main, Footer };

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+// import styled from "styled-components";
 
 const spotlightStyles = {
   container: {
@@ -6,10 +6,9 @@ const spotlightStyles = {
     flexDirection: "column", // Arrange items vertically
     justifyContent: "center",
     alignItems: "center",
+    position: "relative",
     height: "100vh", // Adjust the height as necessary
     padding: "20px",
-    // fontFamily: "Arial, sans-serif", // Choose your desired font
-    // fontSize: "1.2rem", // Adjust the font size as needed
   },
   image: {
     maxWidth: "80%", // Limit the image size to avoid overflow
@@ -20,6 +19,17 @@ const spotlightStyles = {
     padding: "1rem",
     backgroundColor: "#F5F5DC",
   },
+  favoriteButton: {
+    position: "absolute",
+    top: "0.5rem",
+    right: "0.5rem",
+    zIndex: 1,
+  },
+  artistText: {
+    fontFamily: "arial", // Change to your desired font-family
+    fontSize: "1rem", // Adjust the font size as needed
+    marginTop: "1rem", // Add some spacing above the text
+    textAlign: "center", // Center the text horizontally
+  },
 };
-
 export default spotlightStyles;

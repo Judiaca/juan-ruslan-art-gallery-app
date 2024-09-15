@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 const Container = styled.article`
-  display: flex;
-  flex-direction: column;
-  align-items: center;   
+  display: flex; // Use flexbox for the two-column layout
+  gap: 20px; // Add some space between the left and right sections
 
   padding: 20px;
+  position: relative;
 `;
 
 const ImageContainer = styled.div`
@@ -15,9 +15,8 @@ const ImageContainer = styled.div`
 `;
 
 const DetailsContainer = styled.div`
-  width: 100%;
-  max-width: 600px;
-  text-align: center;
+  flex: 1; // Allow this section to grow and take available space
+  text-align: left; // Align text to the left
 `;
 
 const Title = styled.h1`

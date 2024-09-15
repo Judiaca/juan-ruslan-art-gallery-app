@@ -37,3 +37,19 @@
 // `;
 
 // export default FavoriteButtonContainer;
+
+import styled from "styled-components";
+
+const FavoriteButtonContainer = styled.button`
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  svg {
+    width: 24px; // Adjust size as needed
+    height: 24px;
+  }
+`;
+
+export default FavoriteButtonContainer;

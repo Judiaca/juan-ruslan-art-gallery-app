@@ -4,7 +4,7 @@ import ArtPiecesGrid from "./artPiecesStyles";
 const ArtPieces = ({ pieces, artPiecesInfo, onToggleFavorite }) => {
   return (
     <div>
-      <h2>Art Pieces Collection</h2>
+      {/* <h2>Art Pieces Collection</h2> */}
       <ArtPiecesGrid>
         {" "}
         {/* Apply the styled component */}

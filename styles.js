@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-import { Lora } from "next/font/google";
+import { Raleway } from "next/font/google";
 
-const lora = Lora({
+const raleway = Raleway({
   subsets: ["latin"],
   weight: ["400", "700"],
   style: ["normal"],
@@ -13,7 +13,7 @@ export default createGlobalStyle`
     --text-color: #434343;
     --primary-color: #ab3897;
     --bg: #f9f9f9;
-    --font-family: ${lora.style.fontFamily}, sans-serif;
+    --font-family: ${raleway.style.fontFamily}, sans-serif;
   }
 
   *,
