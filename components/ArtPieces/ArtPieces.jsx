@@ -1,23 +1,26 @@
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
+import ArtPiecesGrid from "./artPiecesStyles";
 
 const ArtPieces = ({ pieces, artPiecesInfo, onToggleFavorite }) => {
   return (
     <div>
-      <h2>Art Pieces Collection</h2>
-      <ul className="art-pieces-grid">
-        {pieces.map(({ slug, imageSource, title, artist }) => (
+      {/* <h2>Art Pieces Collection</h2> */}
+      <ArtPiecesGrid>
+        {" "}
+        {/* Apply the styled component */}
+        {pieces.map(({ slug, imageSource, name, artist }) => (
           <li key={slug}>
             <ArtPiecePreview
               slug={slug}
               image={imageSource}
-              title={title}
+              title={name}
               artist={artist}
               artPiecesInfo={artPiecesInfo}
               onToggleFavorite={onToggleFavorite}
             />
           </li>
         ))}
-      </ul>
+      </ArtPiecesGrid>
     </div>
   );
 };

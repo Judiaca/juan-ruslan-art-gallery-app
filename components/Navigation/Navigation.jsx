@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
+// import Image from "next/image";
+import styles from "./navigationStyles";
 
-import styles from "./Styles";
 const { Menu, MenuItem } = styles;
 
 const Navigation = () => {
@@ -15,7 +16,7 @@ const Navigation = () => {
           <Link href="/">Spotlight</Link>
         </MenuItem>
         <MenuItem $active={isActive("/art-pieces")}>
-          <Link href="/art-pieces">Pieces</Link>
+          <Link href="/art-pieces">Art Pieces</Link>
         </MenuItem>
         <MenuItem $active={isActive("/favorites")}>
           <Link href="/favorites">Favorites</Link>
