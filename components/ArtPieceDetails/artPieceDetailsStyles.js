@@ -1,59 +1,95 @@
 import styled from "styled-components";
 
 const Container = styled.article`
-  display: flex; // Use flexbox for the two-column layout
-  gap: 20px; // Add some space between the left and right sections
-
-  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 80px;
   position: relative;
-`;
-
-const ImageContainer = styled.div`
-  width: 100%;
-  max-width: 400px;
-  margin-bottom: 20px;
-`;
-
-const DetailsContainer = styled.div`
-  flex: 1; // Allow this section to grow and take available space
-  text-align: left; // Align text to the left
-`;
-
-const Title = styled.h1`
-  font-size: 24px;
-  margin-bottom: 10px;
-`;
-
-const DetailsItem = styled.p`
-  margin-bottom: 5px;
-  font-size: 16px;
-
-  span {
-    font-weight: bold;
+  margin-bottom: 150px;
+  @media screen and (max-width: 767px) {
+    gap: 40px;
   }
 `;
 
-const ColorsList = styled.ul`
-  list-style: none;
+const Picture = styled.div`
+  width: 44%;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+  img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    border: 20px solid var(--primary-color);
+    box-shadow: 0px 20px 30px -10px rgba(0, 0, 0, 0.7);
+    background: #ccc;
+    margin-bottom: 20px;
+  }
+`;
+
+const Description = styled.div`
+  width: calc(56% - 80px);
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+  h2 {
+    display: block;
+    width: 100%;
+    font-size: 2.8rem;
+    margin-top: 10px;
+    margin-bottom: 24px;
+    color: var(--primary-color);
+    @media screen and (max-width: 767px) {
+      font-size: 2rem;
+    }
+  }
+  ul {
+    margin-bottom: 40px;
+    li {
+      font-size: 22px;
+      padding: 4px 0px;
+      color: #9b9999;
+      @media screen and (max-width: 767px) {
+        font-size: 16px;
+      }
+      span {
+        color: var(--text-color);
+        font-weight: 700;
+      }
+    }
+  }
+`;
+
+const Colors = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
-  margin-bottom: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 20px;
+  position: relative;
 `;
 
 const ColorItem = styled.li`
+  flex: 1;
   background-color: ${(props) => props.color};
-  color: white;
-  padding: 5px 10px;
-  border-radius: 3px;
+  box-shadow: 0px 20px 30px -10px rgba(0, 0, 0, 0.7);
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 100%;
+  }
 `;
 
 export default {
   Container,
-  ImageContainer,
-  DetailsContainer,
-  Title,
-  DetailsItem,
-  ColorsList,
+  Picture,
+  Description,
+  Colors,
   ColorItem,
 };

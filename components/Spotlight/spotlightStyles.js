@@ -1,35 +1,42 @@
-// import styled from "styled-components";
+import styled from "styled-components";
 
-const spotlightStyles = {
-  container: {
-    display: "flex",
-    flexDirection: "column", // Arrange items vertically
-    justifyContent: "center",
-    alignItems: "center",
-    position: "relative",
-    height: "100vh", // Adjust the height as necessary
-    padding: "20px",
-  },
-  image: {
-    maxWidth: "80%", // Limit the image size to avoid overflow
-    height: "auto",
-    border: "1.5rem solid #2A324B",
-    boxShadow: "0 0.5rem 1rem rgba(0, 0, 0, 0.3)", // Deeper, more realistic shadow
-    borderRadius: "0.5rem", // Slightly rounded corners
-    padding: "1rem",
-    backgroundColor: "#F5F5DC",
-  },
-  favoriteButton: {
-    position: "absolute",
-    top: "0.5rem",
-    right: "0.5rem",
-    zIndex: 1,
-  },
-  artistText: {
-    fontFamily: "arial", // Change to your desired font-family
-    fontSize: "1rem", // Adjust the font size as needed
-    marginTop: "1rem", // Add some spacing above the text
-    textAlign: "center", // Center the text horizontally
-  },
-};
-export default spotlightStyles;
+const Hero = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 40px auto 100px auto;
+  max-width: 400px;
+  img {
+    width: 100%;
+    height: auto;
+    border: 16px solid var(--primary-color);
+    padding: 10px;
+    box-shadow: 0px 20px 30px -10px rgba(0, 0, 0, 0.7);
+
+    background: #f5f5dc;
+    @media screen and (max-width: 767px) {
+      border: 10px solid var(--primary-color);
+      padding: 6px;
+    }
+  }
+`;
+
+const ArtistInfo = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  padding: 20px 20px 0px 10px;
+  p {
+    font-size: 20px;
+    font-weight: 400;
+    span {
+      font-weight: 700;
+    }
+  }
+`;
+
+export default { Hero, ArtistInfo };

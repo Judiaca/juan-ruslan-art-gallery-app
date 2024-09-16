@@ -1,27 +1,45 @@
 import styled from "styled-components";
 
+const Nav = styled.nav`
+  width: 100%;
+
+  height: 100%;
+`;
+
 const Menu = styled.menu`
   display: flex;
-  gap: 300px; // Add gap between menu items
+  width: 100%;
+  height: 100%;
 `;
 
 const MenuItem = styled.li`
-  font-weight: 1.5rem;
-  text-decoration: none;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 33.333333%;
   color: inherit;
-  padding: 10px;
-  // display: grid;
-  place-items: center;
   height: 100%;
-  // width: 100%;
-
+  background: ${({ $active }) => ($active ? "#2A324B" : "#c7ccdb")};
+  color: ${({ $active }) => ($active ? "#ffffff" : "#2A324B")};
   &:hover {
-    background-color: ${(props) => (props.isActive ? "#9096B4" : "#2A324B")};
-    color: ${(props) => (props.isActive ? "#484B57" : "white")};
+    background: ${({ $active }) => ($active ? "#2A324B" : "#9096b4")};
   }
-
-  background-color: ${(props) => (props.isActive ? "#8C92AD" : "#C7CCDB")};
-  color: ${(props) => (props.isActive ? "white" : "#484B57")};
+  a {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    font-weight: 700;
+    font-size: 22px;
+    @media screen and (max-width: 767px) {
+      font-size: 14px;
+    }
+  }
 `;
 
-export default { Menu, MenuItem };
+export default { Nav, Menu, MenuItem };

@@ -26,6 +26,7 @@ const ArtPieceDetailsPage = ({
 
   return (
     <Section>
+      <BackButton />
       <ArtPieceDetails
         slug={slug}
         image={imageSource}
@@ -38,7 +39,6 @@ const ArtPieceDetailsPage = ({
         onToggleFavorite={() => onToggleFavorite(slug)}
         onSubmitComment={onSubmitComment}
       />
-      <BackButton />
     </Section>
   );
 };

@@ -1,22 +1,30 @@
 import styled from "styled-components";
 
-const ArtPiecesGrid = styled.ul`
-  // display: grid;
-  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  // gap: 20px;
-  // padding: 20px; /* Optional: Add padding for spacing around the grid */
-  // list-style: none; /* Remove default list styling */
-
-  width: 100%;
-  height: 80%;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  overflow: scroll;
-  background-color: white;
-  padding: 1rem;
+const Title = styled.h2`
+  font-size: 40px;
+  color: var(--primary-color);
+  margin: 40px 0px;
+  font-weight: 700;
 `;
 
-export default ArtPiecesGrid;
+const ArtPiecesGrid = styled.ul`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 30px;
+  margin-bottom: 150px;
+  li {
+    width: calc((100% - 60px) / 3);
+    @media screen and (max-width: 1023px) {
+      width: calc((100% - 30px) / 2);
+    }
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
+`;
+
+export default { Title, ArtPiecesGrid };

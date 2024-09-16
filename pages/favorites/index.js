@@ -1,4 +1,5 @@
 import ArtPieces from "@/components/ArtPieces/ArtPieces";
+import NotFound from "@/components/NotFound/NotFound";
 import Section from "@/components/Section/Section";
 import { useEffect, useState } from "react";
 
@@ -21,7 +22,7 @@ const FavoritesPage = ({ artPieces, artPiecesInfo, onToggleFavorite }) => {
           onToggleFavorite={onToggleFavorite}
         />
       ) : (
-        <h1>Nothing found ...</h1>
+        <NotFound>Nothing found ...</NotFound>
       )}
     </Section>
   );

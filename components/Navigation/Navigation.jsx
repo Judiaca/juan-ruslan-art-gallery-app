@@ -1,16 +1,15 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-// import Image from "next/image";
 import styles from "./navigationStyles";
 
-const { Menu, MenuItem } = styles;
+const { Nav, Menu, MenuItem } = styles;
 
 const Navigation = () => {
   const { pathname } = useRouter();
   const isActive = (path) =>
     pathname === path || pathname.startsWith(path + "/");
   return (
-    <nav>
+    <Nav>
       <Menu>
         <MenuItem $active={pathname === "/" && pathname === "/"}>
           <Link href="/">Spotlight</Link>
@@ -22,7 +21,7 @@ const Navigation = () => {
           <Link href="/favorites">Favorites</Link>
         </MenuItem>
       </Menu>
-    </nav>
+    </Nav>
   );
 };
 

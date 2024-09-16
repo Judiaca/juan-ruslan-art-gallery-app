@@ -19,7 +19,7 @@ const SpotlightPage = ({ artPieces, artPiecesInfo, onToggleFavorite }) => {
   const { slug, imageSource, artist } = randomPiece;
 
   return (
-    <Section style={{ marginTop: "-5rem" }}>
+    <Section>
       <Spotlight
         image={imageSource}
         artist={artist}

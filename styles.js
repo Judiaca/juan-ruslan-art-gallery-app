@@ -3,7 +3,7 @@ import { Raleway } from "next/font/google";
 
 const raleway = Raleway({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "600", "700", "900"],
   style: ["normal"],
 });
 
@@ -11,7 +11,8 @@ export default createGlobalStyle`
 
   :root { 
     --text-color: #434343;
-    --primary-color: #ab3897;
+    --primary-color: #2A324B;
+    --white-color: #ffffff;
     --bg: #f9f9f9;
     --font-family: ${raleway.style.fontFamily}, sans-serif;
   }

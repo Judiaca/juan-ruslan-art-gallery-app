@@ -3,17 +3,8 @@ import FavoriteButton from "../FavoriteButton/FavoriteButton";
 import Comments from "../Comments/Comments";
 import CommentForm from "../CommentForm/CommentForm";
 import styles from "./artPieceDetailsStyles";
-// import BackButton from "../BackButton/BackButton";
 
-const {
-  Container,
-  ImageContainer,
-  DetailsContainer,
-  Title,
-  DetailsItem,
-  ColorsList,
-  ColorItem,
-} = styles;
+const { Container, Picture, Description, Colors, ColorItem } = styles;
 
 const ArtPieceDetails = ({
   slug,
@@ -31,79 +22,37 @@ const ArtPieceDetails = ({
 
   return (
     <Container>
-      <div>
-        <ImageContainer>
-          <FavoriteButton
-            isFavorite={artPiece?.isFavorite}
-            onToggleFavorite={onToggleFavorite}
-          />
-          <h1>{title}</h1>
-          <Image src={image} width={400} height={400} alt={artist} />
-        </ImageContainer>
-
-        <DetailsContainer>
-          <DetailsItem>
+      <Picture>
+        <Image src={image} width={600} height={800} alt={artist} />
+        <Colors>
+          {colors.map((color) => {
+            return <ColorItem key={color} color={color} />;
+          })}
+        </Colors>
+      </Picture>
+      <Description>
+        <FavoriteButton
+          isFavorite={artPiece?.isFavorite}
+          onToggleFavorite={onToggleFavorite}
+        />
+        <h2>{title}</h2>
+        <ul>
+          <li>
             Artist: <span>{artist}</span>
-          </DetailsItem>
-          <DetailsItem>
+          </li>
+          <li>
             Year: <span>{year}</span>
-          </DetailsItem>
-          <DetailsItem>
+          </li>
+          <li>
             Genre: <span>{genre}</span>
-          </DetailsItem>
-          <ColorsList>
-            {colors.map((color) => {
-              return (
-                <ColorItem key={color} color={color}>
-                  {color}
-                </ColorItem>
-              );
-            })}
-          </ColorsList>
-        </DetailsContainer>
-      </div>
-      {/* <BackButton
-        style={{
-          position: "absolute",
-          bottom: "20px",
-          right: "20px",
-        }}
-      /> */}
-
-      <div>
+          </li>
+        </ul>
+        <hr />
         <Comments comments={artPiece?.comments} />
         <CommentForm slug={slug} onSubmitComment={onSubmitComment} />
-      </div>
+      </Description>
     </Container>
   );
 };
 
 export default ArtPieceDetails;
-//     <article>
-//       <FavoriteButton
-//         isFavorite={artPiece?.isFavorite}
-//         onToggleFavorite={onToggleFavorite}
-//       />
-//       <h1>{title}</h1>
-//       <Image src={image} width={400} height={400} alt={artist} />
-//       <p>
-//         Artist: <span>{artist}</span>
-//       </p>
-//       <p>
-//         Year: <span>{year}</span>
-//       </p>
-//       <p>
-//         Genre: <span>{genre}</span>
-//       </p>
-//       <ul>
-//         {colors.map((color) => {
-//           return <li key={color}>{color}</li>;
-//         })}
-//       </ul>
-//       <Comments comments={artPiece?.comments} />
-//       <CommentForm slug={slug} onSubmitComment={onSubmitComment} />
-//     </article>
-//   );
-// };
-
-// export default ArtPieceDetails;

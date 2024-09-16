@@ -1,24 +1,25 @@
+import styles from "./commentsStyles.js";
+
+const { CommentsSection } = styles;
+
 const Comments = ({ comments }) => {
   return (
-    <section>
+    <CommentsSection>
       {comments && comments.length > 0 ? (
         <ul>
           {comments.map((comment, index) => (
             <li key={index}>
-              <p>
-                <strong>Date:</strong> {comment.date}
-              </p>
-              <p>
-                <strong>Time:</strong> {comment.time}
-              </p>
+              <strong>
+                {comment.date} | {comment.time}
+              </strong>
               <p>{comment.text}</p>
             </li>
           ))}
         </ul>
       ) : (
-        <p>No comments...</p>
+        <span>No comments...</span>
       )}
-    </section>
+    </CommentsSection>
   );
 };
 

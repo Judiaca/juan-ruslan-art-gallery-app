@@ -1,70 +1,65 @@
 import styled from "styled-components";
-import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
-const StyledFavoriteButton = styled(FavoriteButton)`
-  z-index: 2;
-  /* You can add additional styles for the FavoriteButton here if needed */
-`;
-
-const ArtPiecePreviewContainer = styled.article`
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  margin-bottom: 1rem;
-  transition: transform 0.2s;
-  position: relative;
-  width: 300px;
-  height: 350px;
+const Article = styled.article`
   display: flex;
-  flex-direction: column;
-  overflow: hidden;
-
-  &:hover {
-    transform: translateY(-5px);
-  }
-
-  figure {
-    margin: 0;
-    display: flex;
-    // flex: 1; // Allow the figure to expand to fill available space
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  img {
-    max-width: 100%;
-    max-height: 200px; // Limit image height to allow space for text
-    object-fit: contain;
-  }
-
-  .caption {
-    text-align: center;
-    margin-top: 1rem; // Add spacing between image and text
-  }
-
-  h3 {
-    margin-bottom: 0.25rem;
-  }
-
-  ${StyledFavoriteButton} {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    padding: 0.25rem;
-    font-size: 0.8rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  gap: 20px;
+  a {
+    display: block;
+    position: relative;
+    width: 100%;
+    border: 16px solid var(--primary-color);
+    padding: 10px;
+    box-shadow: 0px 20px 30px -10px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    &:before {
+      content: "";
+      display: block;
+      width: 100%;
+      padding-top: 120%;
+    }
+    img {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      left: 0px;
+      top: 0px;
+      object-fit: cover;
+    }
   }
 `;
 
-// const StyledFavoriteButton = styled(FavoriteButton)`
-//   position: absolute;
-//   top: 0.5rem;
-//   right: 0.5rem;
+const Info = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  padding-right: 54px;
+  h3 {
+    display: block;
+    font-weight: 700;
+    font-size: 24px;
+    width: 100%;
+  }
+  button {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+  }
+  p {
+    font-size: 14px;
+    span {
+      font-weight: 700;
+    }
+  }
+`;
 
-//   /* Reduce the size and padding of the button */
-//   padding: 0.25rem;
-//   font-size: 0.8rem;
-// `;
-
-export default ArtPiecePreviewContainer;
-export { StyledFavoriteButton };
+export default { Article, Info };
