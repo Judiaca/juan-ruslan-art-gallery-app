@@ -1,29 +1,24 @@
 import { render, screen } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
 import Navigation from "./Navigation";
 
-// Mock useRouter to provide a mock router object
 jest.mock("next/router", () => ({
   useRouter() {
     return {
       pathname: "/",
-      push: jest.fn(),
     };
   },
 }));
 
 describe("Navigation Component", () => {
-  it("renders the Spotlight and Pieces navigation links", () => {
-    render(
-      <MemoryRouter initialEntries={["/"]}>
-        <Navigation />
-      </MemoryRouter>
-    );
+  it("renders the Spotlight and Art Pieces navigation links", () => {
+    render(<Navigation />);
 
     const spotlightLink = screen.getByRole("link", { name: /Spotlight/i });
-    const piecesLink = screen.getByRole("link", { name: /Pieces/i });
+    const piecesLink = screen.getByRole("link", { name: /Art Pieces/i });
+    const favoritesLink = screen.getByRole("link", { name: /Favorites/i });
 
     expect(spotlightLink).toBeInTheDocument();
     expect(piecesLink).toBeInTheDocument();
+    expect(favoritesLink).toBeInTheDocument();
   });
 });
